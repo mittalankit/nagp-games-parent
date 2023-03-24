@@ -5,8 +5,8 @@ const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPl
 const deps = require("./package.json").dependencies;
 
 const remotes = {
-    hangmanGame: "nagp-hangman@https://mittalankit.github.io/nagp-hangman/remoteEntry.js",
-    tictactoeGame: "nagp-tictactoe@https://mittalankit.github.io/nagp-tictactoe/remoteEntry.js",
+  hangman_game: "hangman@https://mittalankit.github.io/nagp-hangman/remoteEntry.js",
+  tictactoe_game: "tictactoe@https://mittalankit.github.io/nagp-tictactoe/remoteEntry.js",
 }
 
 module.exports = merge(common, {
@@ -18,7 +18,7 @@ module.exports = merge(common, {
 
     plugins: [
         new ModuleFederationPlugin({
-          name: "caw_container",
+          name: "nagp_parentapp",
           filename: "remoteEntry.js",
           remotes: remotes,
           exposes: {},
